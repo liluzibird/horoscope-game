@@ -24,11 +24,28 @@ ul {
   list-style: none;
   display: flex;
 }
-
 li {
   margin-right: 1rem;
 }
 h1 {
   color: #e74c3c;
   margin-bottom: 0.5rem;
+}
+button{
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  background-color:  aliceblue;
+  color: rgb(13, 13, 14);
+  padding: 7px 13px;
+  border: none;
+  border-radius: 28px;
+}
+button:hover{
+  border-radius: 28px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  background-color: #e74c3c;
+  color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 7px 13px;
 }
