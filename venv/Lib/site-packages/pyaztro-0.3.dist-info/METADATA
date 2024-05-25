@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: pyaztro
+Version: 0.3
+Summary: A client library for aztro - The Astrology API
+Home-page: https://github.com/sameerkumar18/pyaztro
+Author: Sameer Kumar
+Author-email: sam@sameerkumar.website
+License: Apache 2.0
+Keywords: api wrapper client library astrology data aztro
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: requests
+Requires-Dist: python-dateutil
+Provides-Extra: dev
+Requires-Dist: sphinx ; extra == 'dev'
+Requires-Dist: sphinx-autobuild ; extra == 'dev'
+
+PyAztro
+============
+
+PyAztro is a client library for `aztro <https://github.com/sameerkumar18/aztro>`_ written in Python.
+
+aztro provides horoscope info for sun signs such as Lucky Number, Lucky Color, Mood, Color, Compatibility with other sun signs, description of a sign for that day etc.
+
+Documentation for aztro API is available `here <https://aztro.sameerkumar.website>`_, documentation for PyAztro is under development.
+
+Requirements
+---------------
+
+* Python 3+ (Recommended)
+* The ``requests`` and ``dateutils`` library. `pip` should handle this for you when installing pyaztro.
+
+Installation
+---------------
+::
+
+    pip install pyaztro
+
+Example Usage
+------------------
+::
+
+    >>> import pyaztro
+    >>> horoscope = pyaztro.Aztro(sign='aries')
+    >>> horoscope.description
+    'Diligent'
+
+Support
+----------
+If you encounter any bugs, please let me know by `creating an issue <https://github.com/sameerkumar18/pyaztro/issues/new>`_ or tweeting at me `@sameer_kumar018 <https://www.twitter.com/sameer_kumar018>`_.
+
+Contributing
+---------------
+Please see the repository's `CONTRIBUTING` file.
+
+Say Thanks
+---------------
+`Say Thanks <https://saythanks.io/to/sameerkumar18>`_
+
+Donate
+---------------
+`Paypal <https://www.paypal.me/sameerkumar18>`_
+
