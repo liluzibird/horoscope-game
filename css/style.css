@@ -10,7 +10,7 @@ body {
   font-size: 1rem;
 }
 main {
-  max-width: 900px;
+  max-width: 1300px;
   margin: auto;
   padding: 0.5rem;
   text-align: center;
@@ -48,4 +48,8 @@ button:hover{
   color: aliceblue;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 7px 13px;
+}
+.container {
+  line-height: 2;
+  margin-top: 30px;
 }
