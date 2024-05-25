@@ -1,4 +1,4 @@
-# Zodielp
+## Zodielp
 
 A zodiac sing restaurant recomender to find meals that are suitable for your zodiac sign.
 
