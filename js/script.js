@@ -1,12 +1,5 @@
-function clicked() 
+function getZodiac()
 {
-    fetch('http://localhost:5000/')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-    })
-    .catch(error => console.log(error))
- 
   // Get the user's birthdate (assuming it's in the format 'YYYY-MM-DD')
   const selectedDate = document.getElementById('calendar').value;
   const userBirthdate = selectedDate;
@@ -42,12 +35,67 @@ function clicked()
     zodiacSign = 'Scorpio';
   } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
     zodiacSign = 'Sagittarius';
-  } else {
+  } else if(day == NaN || month == NaN){
     zodiacSign = 'Capricorn';
+  } else {
+    zodiacSign = 'null';
+  }
+  // Display the zodiac sign
+  return zodiacSign;
+}
+
+function Display_restaurants(sing, location)
+{
+  fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1&entity_type=city&q=${location}&count=10&radius=10000&sort=real_distance&order=asc&lat=28.6139398&lon=-81.2528767`)
+ .then(response => response.json())
+ .then(data => {
+    const restaurants = data.restaurants;
+    const output = [];
+    restaurants.forEach(restaurant => {
+      if(restaurant.cuisines.includes(sing))
+      {
+        output.push(restaurant);
+      }
+    });
+    const output_html = output.map(restaurant => {
+      return `
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">${restaurant.name}</h5>
+          <p class="card-text">${restaurant.location.address}</p>
+          <p class="card-text">${restaurant.location.city}, ${restaurant.location.country_id}</p>
+          <p class="card-text">${restaurant.average_cost_for_two}</p>
+          <p class="card-text">${restaurant.currency}</p>
+          <p class="card-text">${restaurant.phone_numbers}</p>
+          <p class="card-text">${restaurant.url}</p>
+        </div>
+      </div>
+      `;
+    }).join('');
+    document.getElementById('restaurants').innerHTML = output_html;
+  });
+  
+}
+
+function clicked() 
+{
+  const zodiacSign = getZodiac();
+  if(zodiacSign == 'null')
+  {
+    document.getElementById('answer').innerHTML = 
+    `
+    <p> Please enter a valid date.</p>
+    `;
+    return;
   }
 
-  // Display the zodiac sign
-  document.querySelector('.answer').textContent = `Your zodiac sign is ${zodiacSign}.`;
+  const location = document.getElementById('location').value;
+  document.getElementById('answer').innerHTML = 
+  `
+  <p> Your zodiac sign is ${zodiacSign}.</p>
+  `;
 
+  Display_restaurants(zodiacSign,location);
 }
+
 

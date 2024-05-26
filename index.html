@@ -17,14 +17,20 @@
               <a class ="info" href="./index.html#info"><button> Info </button></a>
         </nav>
         <img src="asset/Zodiac Wheel.jpg" alt="Wheel" class="logo">
+
         <div class="container">
-            <p>Date Of Birth:
+            <p>
+                Date Of Birth:
                 <input type="date" id="calendar" step="1">
+                
+                location:
+                <input type="text" id="location">
             </p>  
             <p>
-                I swear that we are going to finish this project in the rest of the hackathon.
+                Enter the date of birth and click the button to find the nearest restaurants based on your zodiac sign.
             </p>
-            <button onclick="clicked()" id="btn">Click me</button>
+            <button onclick="clicked()" id="btn">Find nearst restaurants </button>
+            <div id="answer"></div>
         </div>
     </main>
 </body>
