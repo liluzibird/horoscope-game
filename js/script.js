@@ -35,7 +35,7 @@ function getZodiac()
     zodiacSign = 'Scorpio';
   } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
     zodiacSign = 'Sagittarius';
-  } else if(day == NaN || month == NaN){
+  } else if(day == NaN && month == NaN){
     zodiacSign = 'Capricorn';
   } else {
     zodiacSign = 'null';
@@ -44,31 +44,6 @@ function getZodiac()
   return zodiacSign;
 }
 
-function Display_restaurants(sing, location)
-{
-  fetch(`http://127.0.0.1:5000/?location=`+location)
- .then(response => response.json())
- .then((data) => {
-    const restaurants = data.businesses;
-    var output = "";
-    for (let i = 0; i < restaurants.length; i++) {
-      output+=
-        `<div class="card">
-         <img class= "card" src="${restaurants[i].image_url}" alt="restaurant image">
-
-            <div class="card-body">
-              <h5 class="card-title">${restaurants[i].name}</h5>
-              <p class="card-text">${restaurants[i].location.address1}</p>
-              <p class="card-text">${restaurants[i].location.city}, ${restaurants[i].location.state}</p>
-              <p class="card-text">rating: ${restaurants[i].rating}</p>
-              <p class="card-text">${restaurants[i].review_count}</p>
-            </div>
-            
-        </div>`;
-    }
-    document.getElementById('restaurants').innerHTML = output;
-  });
-}
 function foodRecommendation()
 {
   if  (zodiacSign == 'Aries')
@@ -122,9 +97,40 @@ function foodRecommendation()
   
 }
 
+function Display_restaurants(sing, location)
+{
+  const options = {method: 'GET',headers: new Headers({
+    "ngrok-skip-browser-warning": "69420",
+    }),};
+
+  fetch('https://3063-169-234-117-168.ngrok-free.app/res?location=' + location,options)
+ .then(response => response.json())
+ .then((data) => {
+    const restaurants = data.businesses;
+    var output = "";
+    for (let i = 0; i < restaurants.length; i++) {
+      output+=
+        `<div class="card">
+         <img class= "card" src="${restaurants[i].image_url}" alt="restaurant image">
+
+            <div class="card-body">
+              <h5 class="card-title">${restaurants[i].name}</h5>
+              <p class="card-text">${restaurants[i].location.address1}</p>
+              <p class="card-text">${restaurants[i].location.city}, ${restaurants[i].location.state}</p>
+              <p class="card-text">rating: ${restaurants[i].rating}</p>
+              <p class="card-text">with : ${restaurants[i].review_count} reviews</p>
+            </div>
+
+        </div>`;
+    }
+    document.getElementById('restaurants').innerHTML = output;
+  });
+}
+
 function clicked() 
 {
   const zodiacSign = getZodiac();
+
   if(zodiacSign == 'null')
   {
     document.getElementById('answer').innerHTML = 

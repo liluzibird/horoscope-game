@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/")
+@app.route("/res")
 def index():
     location = request.args.get('location')
     return jsonify(get_businesses(location,"any"))
