@@ -9,5 +9,6 @@ CORS(app)
 @app.route("/res")
 def index():
     location = request.args.get('location')
-    return jsonify(get_businesses(location,"any"))
+    categories = request.args.get('categories')
+    return jsonify(get_businesses(location,categories))
     

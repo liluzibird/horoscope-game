@@ -1,9 +1,9 @@
 import requests
-def get_businesses(location, sing):
+def get_businesses(location, categories):
     
     url = "https://api.yelp.com/v3/businesses/search"
 
-    querystring = {"location":location}
+    querystring = {"location":location, "categories":categories}
 
     payload = ""
     headers = {
