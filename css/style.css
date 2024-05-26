@@ -20,6 +20,13 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+a.title{text-decoration: none;}
+a.title:visited{color: #e74c3c;}
+
+a.info{
+  text-decoration: none;
+}
+a.info:visited{color: #e74c3c;}
 ul {
   list-style: none;
   display: flex;
