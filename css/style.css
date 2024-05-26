@@ -79,18 +79,40 @@ button:hover{
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px 0;
   background: #48376b;
   color: white;
   margin-top: 2rem;
+  font-size: smaller;
 }
-li{
-  margin-bottom: 10px;
-  text-align: center;
+footer ul{
+padding: 0;
+margin: 0 5px;
+display: flex;
+justify-content: center;
+}
+footer ul li{
+  font-size: 0.8em;
+  margin: 0 10px;
+}
+footer ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color from parent */
+}
+footer ul li a:hover {
+  text-decoration: underline; /* Underline on hover */
 }
 
 footer p {
   margin: 0;
+  padding: 0;
+}
+footer p a{
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color from parent */
+}
+footer p a:hover{
+  text-decoration: underline; /* Underline on hover */
 }
 
 .fa-utensils, .fa-info-circle, .fa-hamburger, .fa-calendar-alt, .fa-handshake, .fa-check, .fa-heart {

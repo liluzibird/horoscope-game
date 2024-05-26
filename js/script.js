@@ -48,7 +48,7 @@ function foodRecommendation(zodiacSign)
 {
   if  (zodiacSign == 'Aries')
   {
-    return 'european&categories=seafood';
+    return 'seafood';
   }
   else if (zodiacSign == 'Taurus')
   {
@@ -164,6 +164,7 @@ function clicked()
   document.getElementById('answer').innerHTML = 
   `
   <p> Your zodiac sign is ${zodiacSign}.</p>
+  <p> And your zodiac food for today is ${foodRecommendation(zodiacSign)}.</p>
   `;
 
   Display_restaurants(zodiacSign,location);
