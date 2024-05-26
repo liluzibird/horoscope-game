@@ -3,11 +3,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
 }
+
 body {
   background: #fdfdfd;
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
+  text-align:center;
 }
 main {
   max-width: 1300px;
@@ -23,6 +26,7 @@ nav {
 ul {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 li {
   margin-right: 1rem;
@@ -30,6 +34,8 @@ li {
 h1 {
   color: #e74c3c;
   margin-bottom: 0.5rem;
+  align-items: center;
+  text-align: center;
 }
 button{
   font-family: "Nunito", sans-serif;
@@ -52,4 +58,43 @@ button:hover{
 .container {
   line-height: 2;
   margin-top: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #e74c3c;
+  color: white;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+.fa-utensils, .fa-info-circle, .fa-hamburger, .fa-calendar-alt, .fa-handshake, .fa-check, .fa-heart {
+  margin-right: 8px; /* Add some space between the icon and text */
+}
+
+#Test_DatetimeLocal {
+  width: 250px;
+  height: 30px;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#Test_DatetimeLocal:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Blue glow on focus */
+}
+
+.logo {
+  width: 300px; 
+  height: auto; 
+  border-radius: 50%;
 }
