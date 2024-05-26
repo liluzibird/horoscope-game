@@ -104,8 +104,24 @@ function Display_restaurants(sing, location)
     }),};
   categories = foodRecommendation(sing)
   fetch('https://b609-23-242-61-167.ngrok-free.app/res?location=' + location + '&categories=' + categories,options)
- .then(response => response.json())
+ .then((response) =>{
+    if(response.ok){
+      return response.json()
+    }
+    throw new Error('error')
+ })
  .then((data) => {
+  if(data.error)
+    {
+      var output = 
+      `
+      <h5 class="card-title">${data.error.code}</h5>
+      <p class="card-text">${data.error.description}</p>
+      `;
+      
+    document.getElementById('restaurants').innerHTML = output;
+    return;
+    }
     const restaurants = data.businesses;
     var output = "";
     for (let i = 0; i < restaurants.length; i++) {
@@ -124,7 +140,11 @@ function Display_restaurants(sing, location)
         </div>`;
     }
     document.getElementById('restaurants').innerHTML = output;
-  });
+  })
+  .catch((error) =>{
+    console.log(error);
+  })
+  ;
 }
 
 function clicked() 
