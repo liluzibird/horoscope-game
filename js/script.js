@@ -44,7 +44,7 @@ function getZodiac()
   return zodiacSign;
 }
 
-function foodRecommendation()
+function foodRecommendation(zodiacSign)
 {
   if  (zodiacSign == 'Aries')
   {
@@ -102,8 +102,8 @@ function Display_restaurants(sing, location)
   const options = {method: 'GET',headers: new Headers({
     "ngrok-skip-browser-warning": "69420",
     }),};
-
-  fetch('https://b609-23-242-61-167.ngrok-free.app/res?location=' + location,options)
+  categories = foodRecommendation(sing)
+  fetch('https://b609-23-242-61-167.ngrok-free.app/res?location=' + location + '&categories=' + categories,options)
  .then(response => response.json())
  .then((data) => {
     const restaurants = data.businesses;
