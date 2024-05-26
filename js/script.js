@@ -38,7 +38,7 @@ function getZodiac()
   } else if(day == NaN && month == NaN){
     zodiacSign = 'Capricorn';
   } else {
-    zodiacSign = 'null';
+    zodiacSign = 'Capricorn';
   }
   // Display the zodiac sign
   return zodiacSign;
