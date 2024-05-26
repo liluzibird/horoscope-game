@@ -69,6 +69,58 @@ function Display_restaurants(sing, location)
     document.getElementById('restaurants').innerHTML = output;
   });
 }
+function foodRecommendation()
+{
+  if  (zodiacSign == 'Aries')
+  {
+    return 'european&categories=seafood';
+  }
+  else if (zodiacSign == 'Taurus')
+  {
+    return 'mediterranean';
+  }
+  else if (zodiacSign == 'Gemini')
+  {
+    return 'scandinavian';
+  }
+  else if(zodiacSign == 'Cancer')
+  {
+    return 'french';
+  }
+  else if(zodiacSign == 'Leo')
+  {
+    return 'gastropub';
+  }
+  else if(zodiacSign == 'Virgo')
+  {
+    return 'sandwiches';
+  }
+  else if(zodiacSign == 'Libra')
+  {
+    return 'cafes';
+  }
+  else if(zodiacSign == 'Scorpio')
+  {
+    'sushibars';
+  }
+  else if(zodiacSign == 'Sagittarius')
+  {
+    return 'vegan';
+  }
+  else if(zodiacSign == 'Capricorn')
+  {
+    return 'steakhouses';
+  }
+  else if(zodiacSign == 'Aquarius')
+  {
+    return 'italian';
+  }
+  else(zodiacSign == 'Pisces')
+  {
+    return 'falafel';
+  }
+  
+}
 
 function clicked() 
 {
