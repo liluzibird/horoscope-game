@@ -79,10 +79,14 @@ button:hover{
 
 footer {
   text-align: center;
-  padding: 1rem 0;
+  padding: 20px;
   background: #48376b;
   color: white;
   margin-top: 2rem;
+}
+li{
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 footer p {
