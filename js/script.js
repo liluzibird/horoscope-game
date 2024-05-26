@@ -46,10 +46,10 @@ function getZodiac()
 
 function Display_restaurants(sing, location)
 {
-  fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1&entity_type=city&q=${location}&count=10&radius=10000&sort=real_distance&order=asc&lat=28.6139398&lon=-81.2528767`)
+  fetch(`http://127.0.0.1:5000/?location=`+location)
  .then(response => response.json())
  .then(data => {
-    const restaurants = data.restaurants;
+    const restaurants = data.buissenes;
     const output = [];
     restaurants.forEach(restaurant => {
       if(restaurant.cuisines.includes(sing))
