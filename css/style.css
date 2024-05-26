@@ -115,3 +115,32 @@ footer p {
   height: auto; 
   border-radius: 50%;
 }
+
+img.picture {
+  width: 300px; 
+  height: auto; 
+  border-radius: 50%;
+}
+
+info-section {
+  padding: 50px;
+  background-color: #fdfdfd;
+  color: #333;
+  text-align: left;
+}
+
+.info-section h2 {
+  color: #48376b;
+  margin-bottom: 20px;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+img.info-image {
+  width: 30%;
+  height: auto;
+  border-radius: 10px;
+}
