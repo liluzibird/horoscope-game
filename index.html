@@ -7,29 +7,32 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js"></script>
     <title>The Restaurant Recommender using your Horoscope Game (with AI*)</title>
+
+    
+
 </head>
-<body>
+<body style="background-color: #d6d5f9;">
     <main>
         <nav>
           <h1>
-            <a class="title" href="./index.html"> Restaurant Recommender using your Horoscope Game (with AI*)</a> 
+            <a class="title" href="./index.html"> The Restaurant Recommender using your Horoscope Game (with AI*)</a> 
           </h1>
               <a class ="info" href="./index.html#info"><button> Info </button></a>
         </nav>
         <img src="asset/Zodiac Wheel.jpg" alt="Wheel" class="logo">
 
         <div class="container">
-            <p>
-                Date Of Birth:
+            <b>
+                <b>Date of Birth:</b>
                 <input type="date" id="calendar" step="1">
                 
-                location:
+                <b></b>Location:</b>
                 <input type="text" id="location">
             </p>  
             <p>
                 Enter the date of birth and click the button to find the nearest restaurants based on your zodiac sign.
             </p>
-            <button onclick="clicked()" id="btn">Find nearst restaurants </button>
+            <button onclick="clicked()" id="btn">Find nearest restaurants </button>
             <div id="answer"></div>
             <div id="restaurants"></div>
         </div>
