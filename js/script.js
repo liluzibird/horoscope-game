@@ -35,10 +35,10 @@ function getZodiac()
     zodiacSign = 'Scorpio';
   } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
     zodiacSign = 'Sagittarius';
-  } else if(day == NaN || month == NaN){
+  } else if(day == NaN && month == NaN){
     zodiacSign = 'Capricorn';
   } else {
-    zodiacSign = 'null';
+    zodiacSign = 'Capricorn';
   }
   // Display the zodiac sign
   return zodiacSign;
