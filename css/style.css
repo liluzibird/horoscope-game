@@ -35,11 +35,11 @@ img.card {
   clear: both;
 }
 a.title{text-decoration: none;}
-a.title:visited{color: #e74c3c;}
+a.title:visited{color: #48376b;}
 a.info{
   text-decoration: none;
 }
-a.info:visited{color: #e74c3c;}
+a.info:visited{color: #48376b;}
 ul {
   list-style: none;
   display: flex;
@@ -49,7 +49,7 @@ li {
   margin-right: 1rem;
 }
 h1 {
-  color: #e74c3c;
+  color: #48376b;
   margin-bottom: 1rem;
   align-items: center;
   text-align: center;
@@ -80,7 +80,7 @@ button:hover{
 footer {
   text-align: center;
   padding: 1rem 0;
-  background: #e74c3c;
+  background: #48376b;
   color: white;
   margin-top: 2rem;
 }
