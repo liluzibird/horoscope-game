@@ -48,33 +48,26 @@ function Display_restaurants(sing, location)
 {
   fetch(`http://127.0.0.1:5000/?location=`+location)
  .then(response => response.json())
- .then(data => {
-    const restaurants = data.buissenes;
-    const output = [];
-    restaurants.forEach(restaurant => {
-      if(restaurant.cuisines.includes(sing))
-      {
-        output.push(restaurant);
-      }
-    });
-    const output_html = output.map(restaurant => {
-      return `
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">${restaurant.name}</h5>
-          <p class="card-text">${restaurant.location.address}</p>
-          <p class="card-text">${restaurant.location.city}, ${restaurant.location.country_id}</p>
-          <p class="card-text">${restaurant.average_cost_for_two}</p>
-          <p class="card-text">${restaurant.currency}</p>
-          <p class="card-text">${restaurant.phone_numbers}</p>
-          <p class="card-text">${restaurant.url}</p>
-        </div>
-      </div>
-      `;
-    }).join('');
-    document.getElementById('restaurants').innerHTML = output_html;
+ .then((data) => {
+    const restaurants = data.businesses;
+    var output = "";
+    for (let i = 0; i < restaurants.length; i++) {
+      output+=
+        `<div class="card">
+         <img class= "card" src="${restaurants[i].image_url}" alt="restaurant image">
+
+            <div class="card-body">
+              <h5 class="card-title">${restaurants[i].name}</h5>
+              <p class="card-text">${restaurants[i].location.address1}</p>
+              <p class="card-text">${restaurants[i].location.city}, ${restaurants[i].location.state}</p>
+              <p class="card-text">rating: ${restaurants[i].rating}</p>
+              <p class="card-text">${restaurants[i].review_count}</p>
+            </div>
+            
+        </div>`;
+    }
+    document.getElementById('restaurants').innerHTML = output;
   });
-  
 }
 
 function clicked() 

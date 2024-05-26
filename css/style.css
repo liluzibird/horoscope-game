@@ -23,9 +23,19 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+img.card {
+  float: left;
+  margin-right: 1rem;
+  max-width: 25%;
+  height: auto;
+}
+.card-body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 a.title{text-decoration: none;}
 a.title:visited{color: #e74c3c;}
-
 a.info{
   text-decoration: none;
 }
